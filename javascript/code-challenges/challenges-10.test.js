@@ -145,7 +145,7 @@ const howManyTreats = (arr) => {
       if(arr[i].store === "Pet store"){
         const items = arr[i].items
         for(let j=0; j<items.length; j++){
-            if(items[j]==="Treats"){
+            if(items[j].name==="Treats"){
                 const treats = items[j];
                 return treats.quantity;
             }
