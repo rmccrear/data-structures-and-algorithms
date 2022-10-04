@@ -2,29 +2,33 @@ const Stack = require("./stack");
 
 class PseudoQueue {
   constructor() {
-    this.stackA = new Stack();
-    this.stackB = new Stack();
+    this.stackBack = new Stack();
+    this.stackFront = new Stack();
   }
 
   enqueue(value) {
-    const stackA = this.stackA;
-    const stackB = this.stackB;
-    while (!stackA.isEmpty()) {
-      stackB.push(stackA.pop());
-    }
-    stackA.push(value);
-    while (!stackB.isEmpty()) {
-      stackA.push(stackB.pop());
-    }
+    this.stackBack.push(value);
   }
   dequeue() {
-    return this.stackA.pop();
+    if (!this.stackFront.isEmpty()) {
+      return this.stackFront.pop();
+    } else {
+      while (!this.stackBack.isEmpty()) {
+        this.stackFront.push(this.stackBack.pop());
+      }
+      return this.stackFront.pop();
+    }
   }
   isEmpty() {
-    return this.stackA.isEmpty();
+    return this.stackFront.isEmpty() && this.stackBack.isEmpty();
   }
   peek() {
-    return this.stackA.top.value;
+    if (this.stackFront.isEmpty()) {
+      while (!this.stackBack.isEmpty()) {
+        this.stackFront.push(this.stackBack.pop());
+      }
+    }
+    return this.stackFront.top.value;
   }
 }
 
