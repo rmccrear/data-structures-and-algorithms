@@ -9,3 +9,4 @@
 4. [linked-list-zip (Merge two linked lists)](javascript/code-challenges/linked-list-zip)
 5. [stack-and-queue](javascript/code-challenges/stack-and-queue)
 6. [stack-queue-pseudo](javascript/code-challenges/stack-queue-pseudo)
+7. [stack-queue-animal-shelter](javascript/code-challenges/stack-queue-animal-shelter)
