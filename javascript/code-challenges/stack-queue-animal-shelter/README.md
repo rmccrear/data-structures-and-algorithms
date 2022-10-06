@@ -13,7 +13,7 @@ We can assume that our animals are in a queue.
 ```mermaid
     graph LR
 
-    HEAD[FRONT] --> A["🐶"] -->B["🐕"]-->C["🐈"] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL[BACK]
+    HEAD --> A["🐶"] -->B["🐕"]-->C["🐈"] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL
 
 ```
 
@@ -24,14 +24,14 @@ So, let's take them off and put them on a stack for a moment.
 ```mermaid
 
     graph
-    HEAD[HEAD] --> A["🐶"] -->B["🐕"]-->C["🐈"] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL[NULL]
+    HEAD[HEAD] --> A["🐶"] -->B["🐕"]-->C["🐈"] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL
 
     HEAD2[TOP]------->TAIL2[NULL]
 ```
 
 ```mermaid
     graph
-    HEAD[HEAD] -->C["🐈"] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL[NULL]
+    HEAD[HEAD] -->C["🐈"] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL
 
     HEAD2[TOP]-->B["🐕"]-->A["🐶"]--->TAIL2[NULL]
 ```
@@ -41,9 +41,9 @@ Now we can take the cat off of the queue.
 ```mermaid
     graph
     C["🐈"]
-    HEAD[HEAD] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL[NULL]
+    HEAD[HEAD] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL
 
-    HEAD2[TOP]-->B["🐕"]-->A["🐶"]--->TAIL2[NULL]
+    HEAD2[TOP]-->B["🐕"]-->A["🐶"]-->TAIL2[NULL]
 ```
 
 Since our linked list has a push method, lets use the push method to put them back onto the linked list. We will pop from the stack, and push to the linked list.
@@ -51,7 +51,7 @@ Since our linked list has a push method, lets use the push method to put them ba
 ```mermaid
     graph
     C["🐈"]
-    HEAD[HEAD] -->A["🐶"]--> B["🐕"] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL[NULL]
+    HEAD[HEAD] -->A["🐶"]--> B["🐕"] --> D["🐈‍⬛"]-->E["🐯"] --> TAIL
 
     HEAD2[TOP]------>TAIL2[NULL]
 ```
