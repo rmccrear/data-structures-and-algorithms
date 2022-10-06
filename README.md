@@ -2,6 +2,7 @@
 
 
 ## JavaScript 
+![JavaScript tests passing badge](https://github.com/rmccrear/data-structures-and-algorithms/actions/workflows/javascript-tests.yml/badge.svg)
 
 1. [linked list](javascript/linked-list)
 2. [linked-list-insertions](javascript/code-challenges/linked-list-insertions)
@@ -10,3 +11,4 @@
 5. [stack-and-queue](javascript/code-challenges/stack-and-queue)
 6. [stack-queue-pseudo](javascript/code-challenges/stack-queue-pseudo)
 7. [stack-queue-animal-shelter](javascript/code-challenges/stack-queue-animal-shelter)
+8. [stack-queue-brackets](javascript/code-challenges/stack-queue-brackets)
