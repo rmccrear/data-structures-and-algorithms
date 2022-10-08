@@ -12,3 +12,4 @@
 6. [stack-queue-pseudo](javascript/code-challenges/stack-queue-pseudo)
 7. [stack-queue-animal-shelter](javascript/code-challenges/stack-queue-animal-shelter)
 8. [stack-queue-brackets](javascript/code-challenges/stack-queue-brackets)
+9. [trees (binary search trees)](javascript/code-challenges/trees)
