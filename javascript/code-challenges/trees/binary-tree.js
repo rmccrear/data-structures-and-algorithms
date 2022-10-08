@@ -40,6 +40,22 @@ class BinaryTree {
     traverse(this.root);
     return traversal;
   }
+  contains(n) {
+    const findNode = (node) => {
+      if (node === null) {
+        return false;
+      } else {
+        if (node.value < n) {
+          return findNode(node.right);
+        } else if (n < node.value) {
+          return findNode(node.left);
+        } else {
+          return true;
+        }
+      }
+    };
+    return findNode(this.root);
+  }
 }
 
 class BinarySearchTree extends BinaryTree {
