@@ -1,4 +1,5 @@
 # Challenge Summary
+![JavaScript tests passing badge](https://github.com/rmccrear/data-structures-and-algorithms/actions/workflows/javascript-tests.yml/badge.svg)
 
 Build a tree and search for the max value. The tree is not guaranteed to be a binary search tree.
 
