@@ -1,4 +1,4 @@
-const Tree = require("./Tree")
+const Tree = require("./tree")
 
 describe('Tree Max', () => {
     test('should build a tree', () => {
