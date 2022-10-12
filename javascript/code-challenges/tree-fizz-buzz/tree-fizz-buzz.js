@@ -1,6 +1,6 @@
+/*
 const { readWordsFromFile } = require("./read-words")
 
-/*
 const words = readWordsFromFile();
 for (word of words) {
     console.log(word)
@@ -45,6 +45,32 @@ class Tree {
             node = node.children[letter]
         }
         return true;
+    }
+
+    clone() { 
+        const tree2 = new Tree();
+        const traverse = (node, node2) => { 
+            for (let childKey in node.children) { 
+                node2.children[childKey] = new Node(childKey)
+                traverse(node.children[childKey], node2.children[childKey])
+            }
+        }
+        traverse(this.root, tree2.root);
+        return tree2;
+    }
+
+    cloneWithAlterKey(fn) { 
+        const tree2 = new Tree();
+        const traverse = (node, node2) => { 
+            for (let childKey in node.children) { 
+                const childKey2 = fn(childKey)
+                if(! node2.children[childKey2]) // handle case where fn collapses childKey, ie. fn is not one-to-one
+                    node2.children[childKey2] = new Node(childKey2)
+                traverse(node.children[childKey], node2.children[childKey2])
+            }
+        }
+        traverse(this.root, tree2.root);
+        return tree2;
     }
 
 }
