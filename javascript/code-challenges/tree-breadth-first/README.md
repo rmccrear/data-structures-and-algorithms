@@ -52,7 +52,7 @@ Now, 7.
 
 ```mermaid LR
     graph LR
-    Q[Q BACK] --> 6--> 9 --> 4 --> 2 -->  QF[FRONT]
+    Q[Q BACK] --> 9 --> 6 --> 4 --> 2 -->  QF[FRONT]
     R[R BACK] --> 7 --> 3 --> 5 --> RF[FRONT]
 ```
 
@@ -61,7 +61,7 @@ There are no more children, so there will be no more additions to Q. Let's finis
 ```mermaid LR
     graph LR
     Q[Q BACK] --> QF[FRONT]
-    R[R BACK] --> 6 --> 9 --> 4 --> 2 --> 7 --> 3 --> 5 --> RF[FRONT]
+    R[R BACK] --> 9 --> 6 --> 4 --> 2 --> 7 --> 3 --> 5 --> RF[FRONT]
 ```
 
 This is a breadth first traversal of the tree.
