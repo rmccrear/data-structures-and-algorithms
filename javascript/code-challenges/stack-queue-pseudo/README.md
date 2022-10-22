@@ -178,4 +178,4 @@ But if we want to dequeue again, it will only take one operation, namely `frontS
     A
 ```
 
-We can see in the worst case it was O(N) operations and the best case was O(1). In terms of space, operations are O(1) because we are not removing items in one stack as soon as we are creating them in another.
+We can see in the worst case it was O(N) operations and the best case was O(1). On average it is O(1) because each element will be pushed exactly twice and popped exactly twice. In terms of space, operations are O(1) because we are not removing items in one stack as soon as we are creating them in another.
