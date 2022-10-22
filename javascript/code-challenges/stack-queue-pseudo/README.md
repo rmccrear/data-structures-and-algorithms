@@ -1,6 +1,6 @@
 # Challenge Summary
 
-A queue can be implemented with two stacks. Since a stack inverts the order, a second stack can have the effect of inverting a second time, to preserver the first in first out nature of queue. Care must be taken to prevent the elements of the data structure from getting shuffled in the middle.
+A queue can be implemented with two stacks. Since a stack inverts the order, a second stack can have the effect of inverting a second time and preserving the first in first out nature of the queue. Care must be taken to prevent the elements of the data structure from getting shuffled in the middle.
 
 ## Whiteboard Process
 
