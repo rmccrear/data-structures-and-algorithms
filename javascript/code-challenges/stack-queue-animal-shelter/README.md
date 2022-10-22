@@ -4,7 +4,7 @@
 
 ## Challenge Summary
 
-This animal shelter operates on a first in first out principle. But depending on the preference of the adopting customer, either a dog or cat will be selected. It could be implemented with two queues, one for dogs, and one for cats. But if the customer is picky, and has different preferences, we can pass in an arbitrary preference function to decide on an appropriate animal for adoption. In this case we can use three stacks. Two of the stacks will form a queue. A third stack will keep the unwanted animals during the selection process until an appropriate animal is found. For how two stacks can act as a queue, see [here](stack-queue-pseudo.md)
+This animal shelter operates on a first in first out principle. But depending on the preference of the adopting customer, either a dog or cat will be selected. It could be implemented with two queues, one for dogs, and one for cats. But if the customer is picky, and has different preferences, we can pass in an arbitrary preference function to decide on an appropriate animal for adoption. In this case we can use three stacks. Two of the stacks will form a queue. A third stack will keep the unwanted animals during the selection process until an appropriate animal is found. For how two stacks can act as a queue, see [here](../stack-queue-pseudo)
 
 ## Whiteboard Process
 
