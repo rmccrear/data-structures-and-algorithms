@@ -1,10 +1,10 @@
 # Challenge Summary
 
-A queue can be implemented with two stacks. Although it is not very effcient, it is an interesting exersize.
+A queue can be implemented with two stacks. Since a stack inverts the order, a second stack can have the effect of inverting a second time, to preserver the first in first out nature of queue. Care must be taken to prevent the elements of the data structure from getting shuffled in the middle.
 
 ## Whiteboard Process
 
-We will start with a frontStack and backStack. When we enqueue, we will push to the back stack.
+We will start with a frontStack and backStack. When we `enqueue`, we will `push` to the backStack.
 
 Let's start with A, B and C and two empty stacks.
 
