@@ -27,8 +27,7 @@ class PreferenceQueue {
     let value = null;
     while (!value && !this.queue.isEmpty()) {
       const next = this.queue.pop();
-      const prefFullfilled = preferenceFn(next); //?
-      if (!preferenceFn(next)) this.stack.push(next);
+      if (!preferenceFn(next)) this.stack.push(next); // if preference not fullfiled, save on stack
       else {
         value = next;
       }
