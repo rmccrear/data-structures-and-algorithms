@@ -98,4 +98,14 @@ describe("PreferenceQueue", () => {
     ).toBe("horse");
     expect(animalQueue.isEmpty()).toBe(true);
   });
+  test('should throw if animal kind not specified', () => {
+    const fn =() => {
+      return new Animal({name: "BeeBee"});
+    }
+    expect(fn).toThrow();
+    const fn2 =() => {
+      return new Animal({name: "BeeBee", kind: "dog"});
+    }
+    expect(fn2).not.toThrow();
+  });
 });
