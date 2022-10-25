@@ -72,3 +72,8 @@ And now for the last item of the array.
 When arr[j] < temp, we put arr[j] in arr[j-1] to make room for the insertion. When we find the place where arr[j] >= arr[j-1], we know where to place temp.
 
 Since this was the last item that needed sorting, it is done.
+
+
+## Complexity
+
+There are two loops, an inner and an outer. The outer loop runs n times, where n is the size of the array. The inner loop runs once the first time, twice the second time, and three times the third time, and so on. So the total loops are n*(n-1)/2 or O(n^2).
