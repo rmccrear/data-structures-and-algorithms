@@ -41,4 +41,38 @@ describe("Sorters", () => {
       "Stardust",
     ]);
   });
+
+  it("can sort movies in place by title", () => {
+    sortTitle(Movies);
+    expect(Movies.map((m) => m.title)).toEqual([
+      "Beetlejuice",
+      "City of God",
+      "The Cotton Club",
+      "Crocodile Dundee",
+      "Memento",
+      "Ratatouille",
+      "The Shawshank Redemption",
+      "Stardust",
+      "The Untouchables",
+      "Valkyrie",
+    ]);
+  });
+
+
+  it("can sort movies in place by year", () => {
+    sortYear(Movies);
+    expect(Movies.map((m) => m.title)).toEqual([
+      "The Cotton Club",
+      "Crocodile Dundee",
+      "Beetlejuice",
+      "The Shawshank Redemption",
+      "Memento",
+      "City of God",
+      "Ratatouille",
+      "Stardust",
+      "Valkyrie",
+      "The Untouchables",
+    ]);
+  });
+
 });
