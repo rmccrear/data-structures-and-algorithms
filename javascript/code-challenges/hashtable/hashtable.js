@@ -25,7 +25,7 @@ class Bucket {
     for(let i=0; i<this.list.length; i++) {
       const [k, v] = this.list[i];
       if(k===key) {
-        return this.list[i];
+        return v;
       }
     }
     return null;
@@ -58,11 +58,16 @@ class Hashtable {
     const hashKey = this.hash(key);
     const bucket = this.arr[hashKey];
     if(bucket) {
-      const [_key, value] = bucket.find(key);
+      const value = bucket.find(key);
       return value;
     } else {
       return null;
     }
+  }
+
+  has(key) {
+    const value = this.get(key);
+    return Boolean(value);
   }
 }
 
