@@ -39,7 +39,11 @@ class Hashtable {
   }
 
   hash(key) {
-    return key.charCodeAt(0) % this.len ;
+    if (typeof key === 'string') {
+      return key.charCodeAt(0) % this.len ;
+    } else if (typeof key === 'number') {
+      return Math.floor(key) % this.len;
+    }
   }
 
   set(key, value) {
