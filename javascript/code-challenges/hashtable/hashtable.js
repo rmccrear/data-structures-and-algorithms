@@ -30,6 +30,10 @@ class Bucket {
     }
     return null;
   }
+
+  all() {
+    return this.list;
+  }
 }
 
 class Hashtable {
@@ -72,6 +76,16 @@ class Hashtable {
   has(key) {
     const value = this.get(key);
     return Boolean(value);
+  }
+
+  all() {
+    const allItems = [];
+    for (let i = 0; i < this.arr.length; i++) {
+      if (this.arr[i]) {
+        allItems.push(...this.arr[i].all());
+      }
+    }
+    return allItems;
   }
 }
 
