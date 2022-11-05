@@ -1,34 +1,28 @@
+const LinkedList = require('./linked-list');
+
+const finder = (findKey) => ([ key, value ]) => key === findKey;
+
 class Bucket {
   constructor(){
-    this.list = [];
+    this.list = new LinkedList();
   }
 
-  replace([key, value]){
-    for(let i=0; i<this.list.length; i++) {
-      const [k, v] = this.list[i];
-      if(k===key) {
-        this.list[i] = [key, value];
-        return this.list[i];
-      }
-    }
-    return null;
+  replace([key, value]) {
+    this.list.replace(finder(key), [key, value]);
   }
 
   add([key, value]) {
-    const result = this.replace([key, value]);
-    if(!result) {
-      this.list.push([key, value]);
-    }
+    this.list.unshift([key, value]);
   }
 
   find(key) {
-    for(let i=0; i<this.list.length; i++) {
-      const [k, v] = this.list[i];
-      if(k===key) {
-        return v;
-      }
-    }
-    return null;
+    const value = this.list.find(finder(key));
+    if (value) return value[1];
+    else return null;
+  }
+
+  all() {
+    return this.list.items();
   }
 }
 
@@ -72,6 +66,16 @@ class Hashtable {
   has(key) {
     const value = this.get(key);
     return Boolean(value);
+  }
+
+  all() {
+    const allItems = [];
+    for (let i = 0; i < this.arr.length; i++) {
+      if (this.arr[i]) {
+        allItems.push(...Array.from(this.arr[i].all()));
+      }
+    }
+    return allItems;
   }
 }
 

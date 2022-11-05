@@ -79,4 +79,18 @@ describe('Hashtable', () => {
     expect(hash.get('ant')).toEqual({name: 'Betsy'});
   });
 
+  test('should get a list of all items', () => {
+    const hash = new Hashtable();
+
+    hash.set('elephant', {name: 'Elly'});
+    hash.set('elephants', [{name: 'Elly'}, {name: 'Ella'}]);
+
+    hash.set('eagle', {name: 'Eagle Eye'});
+    hash.set('eel', {name: 'Electra'});
+    hash.set('aardvark', {name: 'Arthur'});
+    hash.set('ant', { name: 'Betsy' });
+    const items = hash.all();
+    expect(items.length).toEqual(6);
+  });
+
 });
