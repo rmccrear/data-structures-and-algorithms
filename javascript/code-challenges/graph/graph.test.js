@@ -13,7 +13,7 @@ A graph with only one node and edge can be properly returned
 
 'use strict';
 
-const Graph = require('./Graph.js');
+const Graph = require('./graph.js');
 
 describe('Graph', () => {
   test('Node can be successfully added to the graph', () => {
