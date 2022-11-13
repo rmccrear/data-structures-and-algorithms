@@ -14,3 +14,4 @@
 8. [stack-queue-brackets](javascript/code-challenges/stack-queue-brackets)
 9. [trees (binary search trees)](javascript/code-challenges/trees)
 10. [k-ary tree (clone)](javascript/code-challenges/tree-fizz-buzz)
+1. [graph-depth-first traversal](javascript/code-challenges/graph-depth-first)
