@@ -1,6 +1,6 @@
 class Node {
-  constructor(n) {
-    this.value = n;
+  constructor(value=null){
+    this.value = value;
     this.next = null;
   }
 }
@@ -8,14 +8,13 @@ class Node {
 class Stack {
   constructor() {
     this.top = null;
+    this.next = null;
   }
-  push(n) {
-    if (this.top === null) this.top = new Node(n);
-    else {
-      const temp = new Node(n);
-      temp.next = this.top;
-      this.top = temp;
-    }
+
+  push(value) {
+    const n = new Node(value);
+    n.next = this.top;
+    this.top = n;
   }
 
   pop() {
@@ -29,7 +28,7 @@ class Stack {
   }
 
   isEmpty() {
-    if (this.top === null) return true;
+    if(this.top === null) return true;
     else return false;
   }
 }
