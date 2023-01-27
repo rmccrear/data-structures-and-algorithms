@@ -7,6 +7,29 @@ const {
 } = require("./animal-shelter-queue.js");
 
 describe("PreferenceQueue", () => {
+  test("should check for animal preference", () => {
+    const owl = new Animal({ kind: "owl", name: "ORLY", emoji: "🦉" });
+    const cat = new Animal({ kind: "cat", name: "Abby", emoji: "🐈" });
+    const dog = new Animal({ kind: "dog", name: "Able", emoji: "🐶" });
+
+    expect(preferKind("owl")(owl)).toBe(true);
+    expect(preferKind("owl")(cat)).toBe(false);
+    expect(preferKind("owl")(dog)).toBe(false);
+    expect(preferKind("cat")(owl)).toBe(false);
+    expect(preferKind("cat")(cat)).toBe(true);
+    expect(preferKind("cat")(dog)).toBe(false);
+    expect(preferKind("dog")(owl)).toBe(false);
+    expect(preferKind("dog")(cat)).toBe(false);
+    expect(preferKind("dog")(dog)).toBe(true);
+
+    expect(preferCats(owl)).toBe(false);
+    expect(preferCats(cat)).toBe(true);
+    expect(preferCats(dog)).toBe(false);
+    expect(preferDogs(owl)).toBe(false);
+    expect(preferDogs(cat)).toBe(false);
+    expect(preferDogs(dog)).toBe(true);
+  });
+
   test("should enqueue Animals of one kind", () => {
     const dogQueue = new PreferenceQueue();
     dogQueue.enqueue(new Animal({ kind: "dog", name: "Able", emoji: "🐶" }));

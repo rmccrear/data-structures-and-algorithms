@@ -1,43 +1,47 @@
-const Stack = require('./stack');
+class Node {
+  constructor(value=null){
+    this.value = value;
+    this.next = null;
+  }
+}
 
-// Queue with push and pop
-// implemented with two stacks
 class Queue {
-  constructor() {
-    this.backStack = new Stack();
-    this.frontStack = new Stack();
+  constructor(){
+    this.head = null;
+    this.tail = null;
   }
-  enqueue(n) {
-    this.backStack.push(n);
-  }
-  pop() {
-    if(this.frontStack.isEmpty()){
-      while(!this.backStack.isEmpty()){
-        this.frontStack.push(this.backStack.pop());
-      }
-    }
-    return this.frontStack.pop();
-  }
-  push(n) {
-    this.frontStack.push(n)
-  }
-  peek() {
-    if(!this.frontStack.isEmpty()){
-      return this.frontStack.peek();
+
+  enqueue(value){
+    if (this.head === null) {
+      this.head = new Node(value);
+      this.tail = this.head;
     } else {
-      while(!this.backStack.isEmpty()){
-        this.frontStack.push(this.backStack.pop());
-      }
-      return this.frontStack.peek();
+      this.tail.next = new Node(value);
+      this.tail = this.tail.next;
     }
   }
 
   dequeue() {
-    return this.pop();
+    if(this.head === this.tail) {
+      const value = this.head.value;
+      this.tail = null;
+      this.head = null;
+      return value;
+    } else {
+      const value = this.head.value;
+      this.head = this.head.next;
+      return value;
+    }
   }
 
-  isEmpty() {
-    return this.frontStack.isEmpty() && this.backStack.isEmpty();
+  peek() {
+    return this.head.value;
+  }
+
+
+  isEmpty(){
+    if(this.head) return false;
+    else return true;
   }
 }
 
